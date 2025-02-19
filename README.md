@@ -4,7 +4,7 @@
    Objetivo: Conectar pessoas com interesses em comum a partir de um aplicativo que permite organizar, ingressar e editar eventos, tanto em bares quanto restaurantes.
    
 2. Requisitos
-    Funcionais:
+   Funcionais:
    - Criação de perfil de usuário
    - Criação de perfil de estabelecimento
    - Criar e ingressar em eventos
@@ -24,5 +24,5 @@
    - Disponibilidade 24 horas por dia
    - Mínimo de 2 e máximo de 8 pessoas por evento
 
-  3. Restrições e Condições
+  4. Restrições e Condições
       - Restrições técnicas: ReactNative, nestJS, MySQL, Firebase, 
