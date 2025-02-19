@@ -1,7 +1,7 @@
 # AtividadeArquiteturaDeSoftware
 
 1. Descrição do Projeto
-   Objetivo: Conectar pessoas com interesses em comum a partir de um aplicativo que permite organizar, ingressar e editar eventos, tanto em bares quanto restaurantes.
+   O objetivo do projeto é conectar pessoas com interesses em comum a partir de um aplicativo móvel que permite organizar, ingressar e editar eventos, tanto em bares quanto restaurantes.
    
 2. Requisitos
    Funcionais:
@@ -25,4 +25,9 @@
    - Mínimo de 2 e máximo de 8 pessoas por evento
 
   4. Restrições e Condições
-      - Restrições técnicas: ReactNative, nestJS, MySQL, Firebase, 
+      - Restrições técnicas: ReactNative, nestJS, MySQL, Firebase.
+      - Restrições não técnicas:
+           - Orçamento: A definir
+           - Prazo de entrega: A definir
+           - Requisitos legais e regulatórios:
+             
