@@ -3,7 +3,7 @@
 1. Descrição do Projeto
    O objetivo do projeto é conectar pessoas com interesses em comum a partir de um aplicativo móvel que permite organizar, ingressar e editar eventos, tanto em bares quanto restaurantes.
    
-2. Requisitos
+3. Requisitos
    Funcionais:
    - Criação de perfil de usuário
    - Criação de perfil de estabelecimento
