@@ -29,5 +29,20 @@
       - Restrições não técnicas:
            - Orçamento: A definir
            - Prazo de entrega: A definir
-           - Requisitos legais e regulatórios:
+           - Requisitos legais e regulatórios: Leitura facial
+
+  5. Necessidades dos Stakeholders
+      - Acessibilidade
+      - Segurança para usuários e bares
+      - Bares e restaurantes podem exigir algumas coisas...
              
+  6. Tendências tecnológicas
+      - ReactNative
+      - Inteligência artificial
+
+  7. Riscos de projeto
+      - Arquitetura MVC pode não ser ideal
+      - React native pode ser lento demais para o app
+      - Banco relacional pode ser melhor que um não relacional
+
+  8. 
