@@ -44,16 +44,58 @@
       - Arquitetura MVC pode não ser ideal
       - React native pode ser lento demais para o app
       - Banco relacional pode ser melhor que um não relacional
+    
+   8. Organização dos Componentes do Projeto
 
-/todo-list-mvc
-│── src/
-│   ├── model/
-│   │   ├── Task.java
-│   │   ├── TaskDAO.java
-│   ├── view/
-│   │   ├── TaskView.java
-│   ├── controller/
-│   │   ├── TaskController.java
-│   ├── Main.java
-│── README.md
-│── pom.xml (caso use Maven)
+      src/
+      │── events/                   
+      │   ├── dto/                    
+      │   │   ├── create-event.dto.ts  
+      │   │   ├── update-event.dto.ts  
+      │   ├── entities/                 
+      │   │   ├── event.entity.ts      
+      │   ├── events.controller.ts     
+      │   ├── events.service.ts         
+      │   ├── events.module.ts         
+      │   ├── events.repository.ts      
+      │── app.module.ts                
+      │── main.ts                       
+
+📂 DTOs (events/dto/)
+Os DTOs ajudam a validar e definir a estrutura dos dados que são enviados e recebidos.
+
+- create-event.dto.ts
+Define os campos necessários para criar um evento, como nome, descrição, local, horário e participantes.
+
+- update-event.dto.ts
+DTO para atualização de eventos, permitindo modificar apenas alguns campos.
+
+📂 Entidades (events/entities/)
+A entidade representa a estrutura do evento no banco de dados.
+
+- event.entity.ts
+Define a estrutura de armazenamento do evento no banco relacional (MySQL).
+
+📂 Controlador (events.controller.ts)
+O controlador gerencia as requisições HTTP para eventos.
+
+events.controller.ts
+Define as rotas para criar e gerenciar eventos.
+
+📂 Serviço (events.service.ts)
+O serviço implementa a lógica de negócios.
+
+events.service.ts
+Contém métodos para criar, buscar e atualizar eventos.
+
+📂 Repositório (events.repository.ts)
+Lida diretamente com as consultas ao banco de dados.
+
+events.repository.ts
+Gerencia as operações relacionadas a eventos no banco de dados.
+
+📂 Módulo (events.module.ts)
+O módulo encapsula os componentes do evento.
+
+events.module.ts
+Configura o módulo de eventos no NestJS.
