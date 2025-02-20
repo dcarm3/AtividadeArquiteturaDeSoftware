@@ -45,4 +45,15 @@
       - React native pode ser lento demais para o app
       - Banco relacional pode ser melhor que um não relacional
 
-  8. 
+/todo-list-mvc
+│── src/
+│   ├── model/
+│   │   ├── Task.java
+│   │   ├── TaskDAO.java
+│   ├── view/
+│   │   ├── TaskView.java
+│   ├── controller/
+│   │   ├── TaskController.java
+│   ├── Main.java
+│── README.md
+│── pom.xml (caso use Maven)
