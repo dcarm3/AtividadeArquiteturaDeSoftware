@@ -84,12 +84,14 @@ O serviço implementa a lógica de negócios.
 
 - **events.service.ts**: Contém métodos para criar, buscar e atualizar eventos.
 
+### 📂 Módulo (`events.module.ts`)
+O módulo encapsula os componentes do evento.
+
+- **events.module.ts**: Configura o módulo de eventos no NestJS.
+
 ### 📂 Repositório (`events.repository.ts`)
 Lida diretamente com as consultas ao banco de dados.
 
 - **events.repository.ts**: Gerencia as operações relacionadas a eventos no banco de dados.
 
-### 📂 Módulo (`events.module.ts`)
-O módulo encapsula os componentes do evento.
 
-- **events.module.ts**: Configura o módulo de eventos no NestJS.
