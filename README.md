@@ -7,13 +7,14 @@ O objetivo do projeto é conectar pessoas com interesses em comum a partir de um
 ### Funcionais:
 - Criação de perfil de usuário
 - Criação de perfil de estabelecimento
-- Criar e ingressar em eventos
+- Criar e ingressar em eventos, públicos ou privados
 - Convidar/Remover pessoas para o evento
 - Envio de mensagens aos integrantes do evento
 - Adicionar e remover amigos
 - Recomendações personalizadas de estabelecimentos e pessoas
 - Confirmação de presença
 - Avaliação de pessoas e estabelecimentos
+- Fila de espera para eventos lotados
 - **TALVEZ**: Criação de eventos pelo próprio estabelecimento
 
 ### Não-funcionais:
@@ -25,7 +26,7 @@ O objetivo do projeto é conectar pessoas com interesses em comum a partir de um
 - Mínimo de 2 e máximo de 8 pessoas por evento
 
 ## 3. Restrições e Condições
-- **Restrições técnicas**: ReactNative, NestJS, MySQL, Firebase
+- **Restrições técnicas**: ReactNative, NestJS, MySQL, Firebase, Docker, 
 - **Restrições não técnicas**:
   - Orçamento: A definir
   - Prazo de entrega: A definir
