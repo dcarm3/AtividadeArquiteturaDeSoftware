@@ -43,7 +43,7 @@ O objetivo do projeto é conectar pessoas com interesses em comum a partir de um
 ## 6. Riscos de projeto
 - Arquitetura MVC pode não ser ideal
 - React Native pode ser lento demais para o app
-- Banco relacional pode ser melhor que um não relacional
+- Banco não-relacional pode ser melhor que um banco relacional
 
 ## 7. Organização dos Componentes do Projeto
 
