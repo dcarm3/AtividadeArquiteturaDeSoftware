@@ -15,13 +15,13 @@ O objetivo do projeto é conectar pessoas com interesses em comum a partir de um
 - Confirmação de presença
 - Avaliação de pessoas e estabelecimentos
 - Fila de espera para eventos lotados
-- **TALVEZ**: Criação de eventos pelo próprio estabelecimento
+- Criação de eventos pelo próprio estabelecimento
 
 ### Não-funcionais:
 - Confirmar presença até no máximo 1 hora antes do evento
 - Limite de 500 caracteres para descrição pessoal
 - Editar características do evento até no máximo 2 horas antes do evento
-- Criptografia de senhas
+- Criptografia de senhas para segurança de dados
 - Disponibilidade 24 horas por dia
 - Mínimo de 2 e máximo de 8 pessoas por evento
 
@@ -30,16 +30,17 @@ O objetivo do projeto é conectar pessoas com interesses em comum a partir de um
 - **Restrições não técnicas**:
   - Orçamento: A definir
   - Prazo de entrega: A definir
-  - Requisitos legais e regulatórios: Leitura facial
+  - Requisitos legais e regulatórios: O app deverá cumprir leis de privacidade e proteção de dados, como a LGPD e GDPR.
 
 ## 4. Necessidades dos Stakeholders
-- Acessibilidade
-- Segurança para usuários e bares
-- Bares e restaurantes podem exigir algumas condições específicas
+- Acessibilidade para diferentes necessidades de usuários
+- Segurança tanto para usuários como também bares e restarurantes
+- Popularização de estabelecimentos
 
 ## 5. Tendências tecnológicas
 - ReactNative
 - Inteligência artificial
+- Autenticação biométrica
 
 ## 6. Riscos de projeto
 - Arquitetura MVC pode não ser ideal
