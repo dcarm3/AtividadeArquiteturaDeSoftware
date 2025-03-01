@@ -16,6 +16,7 @@ O objetivo do projeto é conectar pessoas com interesses em comum a partir de um
 - Avaliação de pessoas e estabelecimentos
 - Fila de espera para eventos lotados
 - Criação de eventos pelo próprio estabelecimento
+- Visualizar lotação atual do estabelecimento
 
 ### Não-funcionais:
 - Confirmar presença até no máximo 1 hora antes do evento
