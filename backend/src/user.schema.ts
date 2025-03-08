@@ -14,8 +14,8 @@ export class User {
   @Prop()
   cpf: string;
 
-  @Prop()
-  userPicture:string;
+  //@Prop()
+  //userPicture:string;
 
 }
 
