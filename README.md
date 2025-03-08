@@ -22,8 +22,7 @@ O objetivo do projeto é conectar pessoas com interesses em comum a partir de um
 - Confirmar presença até no máximo 1 hora antes do evento
 - Limite de 500 caracteres para descrição pessoal
 - Editar características do evento até no máximo 2 horas antes do evento
-- Criptografia de senhas para segurança de dados
-- Disponibilidade 24 horas por dia
+- Uptime de 95.5%
 - Mínimo de 2 e máximo de 8 pessoas por evento
 
 ## 3. Restrições e Condições
