@@ -5,4 +5,5 @@ export declare class UsersController {
     private readonly usersService;
     constructor(usersService: UsersService);
     create(createUserDto: CreateUserDto): Promise<User>;
+    findAll(): Promise<User[]>;
 }

@@ -13,5 +13,6 @@ export class UsersService {
     return createdUser.save();
   }
 
-  // Métodos adicionais para read, update, delete
-}
+  async findAll(): Promise<User[]> {
+    return this.userModel.find().exec();
+  }}

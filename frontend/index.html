@@ -52,6 +52,7 @@
                 
                 <button type="submit">Cadastrar</button>
             </form>
+            <button onclick="window.location.href='usuarios.html'">Mostrar Usuários</button>
             <p id="message"></p>
         </div>
 
@@ -66,7 +67,7 @@
             const userData = { name, sex, cpf };
             
             try {
-                const response = await fetch("http://localhost:3000/users", { // Substitua pela URL da sua API
+                const response = await fetch("http://localhost:3000/users", { 
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
