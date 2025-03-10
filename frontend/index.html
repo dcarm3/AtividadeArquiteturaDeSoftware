@@ -1,87 +1,105 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cadastro de Usuário</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                background-color: #f4f4f4;
-            }
-            .container {
-                background: white;
-                padding: 20px;
-                border-radius: 8px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            }
-            input, select, button {
-                display: block;
-                width: calc(100% - 16px);
-                margin: 10px 0;
-                padding: 8px;
-                box-sizing: border-box;
-            }
-            label {
-                font-weight: bold;
-                display: block;
-                margin-top: 10px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <h1>Cadastro de Usuário</h1>
-            <form id="userForm">
-                <label for="name">Nome</label>
-                <input type="text" id="name" placeholder="Nome" required>
-                
-                <label for="sex">Sexo</label>
-                <select id="sex" required>
-                    <option value="">Selecione o sexo</option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Feminino">Feminino</option>
-                </select>
-                
-                <label for="cpf">CPF</label>
-                <input type="text" id="cpf" placeholder="CPF" required>
-                
-                <button type="submit">Cadastrar</button>
-            </form>
-            <button onclick="window.location.href='usuarios.html'">Mostrar Usuários</button>
-            <p id="message"></p>
-        </div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input,
+        select,
+        button {
+            display: block;
+            width: calc(100% - 16px);
+            margin: 10px 0;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        #message {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cadastro de Usuário</h1>
+        <form id="userForm">
+            <label for="name">Nome</label>
+            <input type="text" id="name" placeholder="Nome" required>
+
+            <label for="sex">Sexo</label>
+            <select id="sex" required>
+                <option value="">Selecione o sexo</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+            </select>
+
+            <label for="cpf">CPF</label>
+            <input type="text" id="cpf" placeholder="CPF" required>
+
+            <button id="cadastrar" type="submit">Cadastrar</button>
+        </form>
+        <p id="message"></p>
+    </div>
 
     <script>
-        document.getElementById("userForm").addEventListener("submit", async function(event) {
+        document.getElementById("userForm").addEventListener("submit", async function (event) {
             event.preventDefault();
-            
+            const button = document.getElementById("cadastrar")
+
             const name = document.getElementById("name").value;
             const sex = document.getElementById("sex").value;
             const cpf = document.getElementById("cpf").value;
-            
+
             const userData = { name, sex, cpf };
-            
+
             try {
-                const response = await fetch("http://localhost:3000/users", { 
+                const response = await fetch("http://localhost:3000/users", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify(userData)
                 });
-                
+
                 const result = await response.json();
                 document.getElementById("message").textContent = "Usuário cadastrado com sucesso!";
+
                 document.getElementById("userForm").reset();
+                setTimeout(() => {
+                    window.location.href = "usuarios.html"
+                }, 0.5 * 1000);
+
             } catch (error) {
                 document.getElementById("message").textContent = "Erro ao cadastrar usuário.";
             }
         });
     </script>
 </body>
+
 </html>
