@@ -26,10 +26,10 @@ O objetivo do projeto é conectar pessoas com interesses em comum a partir de um
 - Mínimo de 2 e máximo de 8 pessoas por evento
 
 ## 3. Restrições e Condições
-- **Restrições técnicas**: ReactNative, NestJS, MySQL, Firebase, Docker, 
+- **Restrições técnicas**: ReactNative, NestJS, PostgreSQL, Firebase, Docker.
 - **Restrições não técnicas**:
-  - Orçamento: A definir
-  - Prazo de entrega: A definir
+  - Orçamento: Sem valor adicional
+  - Prazo de entrega: 11/2025
   - Requisitos legais e regulatórios: O app deverá cumprir leis de privacidade e proteção de dados, como a LGPD e GDPR.
 
 ## 4. Necessidades dos Stakeholders
