@@ -26,6 +26,12 @@ export class AuthService {
         //2. Barra de pesquisa : "Senhas de app"
         //3. Escrever "Nodemailer" e clicar em criar
         //4. Copiar a senha gerada e colar no campo pass
+
+        //implementar dps:
+        //passar essa logica para o projeto principal 
+        // campo de CPF e o verificador de CPF
+        // logica a missao de implementar a foto do usuario
+        
       },
     });
 
