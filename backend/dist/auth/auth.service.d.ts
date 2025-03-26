@@ -7,8 +7,9 @@ export declare class AuthService {
     private sendVerificationEmail;
     register(email: string, password: string): Promise<{
         message: string;
+        id: any;
     }>;
-    verifyCode(email: string, code: string): Promise<{
+    verifyCode(id: string, code: string): Promise<{
         message: string;
         token: string;
     }>;

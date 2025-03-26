@@ -7,6 +7,7 @@ export declare class AuthController {
         password: string;
     }): Promise<{
         message: string;
+        id: any;
     }>;
     verify(body: {
         email: string;

@@ -55,10 +55,10 @@ let AuthService = class AuthService {
             verificationCode,
         });
         await this.sendVerificationEmail(email, verificationCode);
-        return { message: 'Código enviado para o e-mail.' };
+        return { message: 'Código enviado para o e-mail.', id: user.id };
     }
-    async verifyCode(email, code) {
-        const user = await this.userModel.findOne({ email });
+    async verifyCode(id, code) {
+        const user = await this.userModel.findOne({ id });
         if (!user)
             throw new common_1.BadRequestException('Usuário não encontrado.');
         if (user.verificationCode !== code)

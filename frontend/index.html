@@ -1,105 +1,125 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Usuário</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        input,
-        select,
-        button {
-            display: block;
-            width: calc(100% - 16px);
-            margin: 10px 0;
-            padding: 8px;
-            box-sizing: border-box;
-        }
-
-        label {
-            font-weight: bold;
-            display: block;
-            margin-top: 10px;
-        }
-
-        #message {
-            display: flex;
-            justify-content: center;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Usuário</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f9;
+    }
+    .container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input {
+      margin: 10px 0;
+      padding: 10px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px;
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
-
 <body>
-    <div class="container">
-        <h1>Cadastro de Usuário</h1>
-        <form id="userForm">
-            <label for="name">Nome</label>
-            <input type="text" id="name" placeholder="Nome" required>
 
-            <label for="sex">Sexo</label>
-            <select id="sex" required>
-                <option value="">Selecione o sexo</option>
-                <option value="Masculino">Masculino</option>
-                <option value="Feminino">Feminino</option>
-            </select>
+  <div id="cadastro" class="container">
+    <h2>Cadastro de Usuário</h2>
+    <form id="formCadastro">
+      <!--<input type="text" id="nome" placeholder="Nome" required>-->
+      <input type="email" id="email" placeholder="E-mail" required>
+      <input type="password" id="senha" placeholder="Senha" required>
+      <button type="submit">Criar Conta</button>
+    </form>
+  </div>
 
-            <label for="cpf">CPF</label>
-            <input type="text" id="cpf" placeholder="CPF" required>
+  <div id="verificacao" class="container" style="display: none;">
+    <h2>Verificação de Código</h2>
+    <form id="formVerificacao">
+      <input type="text" id="codigo" placeholder="Código enviado por e-mail" required>
+      <button type="submit">Verificar</button>
+    </form>
+  </div>
 
-            <button id="cadastrar" type="submit">Cadastrar</button>
-        </form>
-        <p id="message"></p>
-    </div>
+  <script>
+    document.getElementById('formCadastro').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      //const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('senha').value;
 
-    <script>
-        document.getElementById("userForm").addEventListener("submit", async function (event) {
-            event.preventDefault();
-            const button = document.getElementById("cadastrar")
-
-            const name = document.getElementById("name").value;
-            const sex = document.getElementById("sex").value;
-            const cpf = document.getElementById("cpf").value;
-
-            const userData = { name, sex, cpf };
-
-            try {
-                const response = await fetch("http://localhost:3000/users", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(userData)
-                });
-
-                const result = await response.json();
-                document.getElementById("message").textContent = "Usuário cadastrado com sucesso!";
-
-                document.getElementById("userForm").reset();
-                setTimeout(() => {
-                    window.location.href = "usuarios.html"
-                }, 0.5 * 1000);
-
-            } catch (error) {
-                document.getElementById("message").textContent = "Erro ao cadastrar usuário.";
-            }
+      
+      try {
+        const res = await fetch('http://localhost:3000/auth/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({  email, password })
         });
-    </script>
-</body>
+        
+        if (!res.ok) {
+          alert('Erro ao criar conta!');
+          return;
+        }
 
+        const data = await res.json()
+
+        if (data.id) {  
+            sessionStorage.setItem('userId', data.id);
+        }
+
+        alert('Conta criada com sucesso! Verifique seu e-mail.');
+        document.getElementById('cadastro').style.display = 'none';
+        document.getElementById('verificacao').style.display = 'block';
+      } catch (err) {
+        alert(err);
+      }
+    });
+
+    document.getElementById('formVerificacao').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const userID = sessionStorage.getItem('userId')
+      const code = document.getElementById('codigo').value;
+      
+      try {
+        const res = await fetch('http://localhost:3000/auth/verify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userID, code }),
+        });
+
+        if (res.ok) {
+          alert('Código verificado com sucesso!');
+          sessionStorage.clear()
+          window.location.href = '/tela-principal'; // Redireciona para a tela principal
+        } else {
+          alert('Código inválido. Tente novamente!');
+        }
+      } catch (err) {
+        alert(err);
+      }
+    });
+  </script>
+
+</body>
 </html>
