@@ -11,6 +11,7 @@ const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const user_module_1 = require("./user.module");
 const auth_module_1 = require("./auth/auth.module");
+const logger_1 = require("./logger/logger");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -19,6 +20,7 @@ exports.AppModule = AppModule = __decorate([
         imports: [
             mongoose_1.MongooseModule.forRoot('mongodb://localhost:27017/rafaGaey'), user_module_1.UsersModule, auth_module_1.AuthModule
         ],
+        providers: [logger_1.Logger],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map

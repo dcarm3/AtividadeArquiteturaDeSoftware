@@ -16,16 +16,22 @@ exports.UsersController = void 0;
 const common_1 = require("@nestjs/common");
 const users_service_1 = require("./users.service");
 const create_user_dto_1 = require("./create-user.dto");
+const logger_1 = require("./logger/logger");
 let UsersController = class UsersController {
     usersService;
-    constructor(usersService) {
+    logger;
+    constructor(usersService, logger) {
         this.usersService = usersService;
+        this.logger = logger;
     }
     async create(createUserDto) {
         return this.usersService.create(createUserDto);
     }
     async findAll() {
         return this.usersService.findAll();
+    }
+    getLogs() {
+        return this.logger.getLogs();
     }
 };
 exports.UsersController = UsersController;
@@ -42,8 +48,15 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], UsersController.prototype, "findAll", null);
+__decorate([
+    (0, common_1.Get)('log'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], UsersController.prototype, "getLogs", null);
 exports.UsersController = UsersController = __decorate([
     (0, common_1.Controller)('users'),
-    __metadata("design:paramtypes", [users_service_1.UsersService])
+    __metadata("design:paramtypes", [users_service_1.UsersService,
+        logger_1.Logger])
 ], UsersController);
 //# sourceMappingURL=user.controller.js.map

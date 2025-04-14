@@ -17,13 +17,17 @@ const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
 const user_schema_1 = require("./user.schema");
+const logger_1 = require("./logger/logger");
 let UsersService = class UsersService {
     userModel;
-    constructor(userModel) {
+    logger;
+    constructor(userModel, logger) {
         this.userModel = userModel;
+        this.logger = logger;
     }
     async create(createUserDto) {
         const createdUser = new this.userModel(createUserDto);
+        console.log(this.logger.addLog(`Usuário criado: ${createUserDto.email})`));
         return createdUser.save();
     }
     async findAll() {
@@ -34,6 +38,7 @@ exports.UsersService = UsersService;
 exports.UsersService = UsersService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, mongoose_1.InjectModel)(user_schema_1.User.name)),
-    __metadata("design:paramtypes", [mongoose_2.Model])
+    __metadata("design:paramtypes", [mongoose_2.Model,
+        logger_1.Logger])
 ], UsersService);
 //# sourceMappingURL=users.service.js.map
