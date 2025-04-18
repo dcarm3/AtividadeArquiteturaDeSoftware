@@ -16,7 +16,7 @@ exports.UsersController = void 0;
 const common_1 = require("@nestjs/common");
 const users_service_1 = require("./users.service");
 const create_user_dto_1 = require("./create-user.dto");
-const logger_1 = require("./logger/logger");
+const in_memory_logger_1 = require("./logger/in-memory-logger");
 let UsersController = class UsersController {
     usersService;
     logger;
@@ -49,14 +49,14 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UsersController.prototype, "findAll", null);
 __decorate([
-    (0, common_1.Get)('log'),
+    (0, common_1.Get)("log"),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], UsersController.prototype, "getLogs", null);
 exports.UsersController = UsersController = __decorate([
-    (0, common_1.Controller)('users'),
+    (0, common_1.Controller)("users"),
     __metadata("design:paramtypes", [users_service_1.UsersService,
-        logger_1.Logger])
+        in_memory_logger_1.InMemoryLogger])
 ], UsersController);
 //# sourceMappingURL=user.controller.js.map

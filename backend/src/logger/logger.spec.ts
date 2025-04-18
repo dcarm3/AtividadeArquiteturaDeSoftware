@@ -1,7 +1,7 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { Logger } from './logger';
+import { Test, TestingModule } from "@nestjs/testing";
+import { Logger } from "./in-memory-logger.ts";
 
-describe('Logger', () => {
+describe("Logger", () => {
   let provider: Logger;
 
   beforeEach(async () => {
@@ -12,7 +12,7 @@ describe('Logger', () => {
     provider = module.get<Logger>(Logger);
   });
 
-  it('should be defined', () => {
+  it("should be defined", () => {
     expect(provider).toBeDefined();
   });
 });

@@ -17,7 +17,7 @@ const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
 const user_schema_1 = require("./user.schema");
-const logger_1 = require("./logger/logger");
+const in_memory_logger_1 = require("./logger/in-memory-logger");
 let UsersService = class UsersService {
     userModel;
     logger;
@@ -39,6 +39,6 @@ exports.UsersService = UsersService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, mongoose_1.InjectModel)(user_schema_1.User.name)),
     __metadata("design:paramtypes", [mongoose_2.Model,
-        logger_1.Logger])
+        in_memory_logger_1.InMemoryLogger])
 ], UsersService);
 //# sourceMappingURL=users.service.js.map

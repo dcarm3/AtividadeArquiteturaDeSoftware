@@ -11,16 +11,18 @@ const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const user_module_1 = require("./user.module");
 const auth_module_1 = require("./auth/auth.module");
-const logger_1 = require("./logger/logger");
+const in_memory_logger_1 = require("./logger/in-memory-logger");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            mongoose_1.MongooseModule.forRoot('mongodb://localhost:27017/rafaGaey'), user_module_1.UsersModule, auth_module_1.AuthModule
+            mongoose_1.MongooseModule.forRoot("mongodb://localhost:27017/rafaGaey"),
+            user_module_1.UsersModule,
+            auth_module_1.AuthModule,
         ],
-        providers: [logger_1.Logger],
+        providers: [in_memory_logger_1.InMemoryLogger],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map
