@@ -1,4 +1,3 @@
-// logger/logger.factory.ts
 import { InMemoryLogger } from "./in-memory-logger";
 import { Logger } from "./logger.interface";
 
